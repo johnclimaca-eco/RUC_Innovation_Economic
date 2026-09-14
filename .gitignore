@@ -1,0 +1,36 @@
+$build/
+$out/
+Slides/$build/
+Slides/$out/
+**/build/
+**/$build/
+**/$out/
+
+# LaTeX auxiliary files
+**/*.aux
+**/*.bbl
+**/*.bcf
+**/*.fdb_latexmk
+**/*.fls
+**/*.lof
+**/*.log
+**/*.lot
+**/*.nav
+**/*.out
+**/*.run.xml
+**/*.snm
+**/*.synctex.gz
+**/*.toc
+**/*.xdv
+
+# Local research extracts
+tmp_*.txt
+
+# Generated PDFs that are reproducible or local intermediates
+Asset/Mysilde/main.pdf
+Pdf/main.pdf
+Pdf/*.synctex.gz
+
+# Reference documents kept locally for course preparation
+Asset/Doc/**/papers/
+Asset/Doc/**/notes/

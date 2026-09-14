@@ -1,0 +1,40 @@
+{
+    "latex-workshop.latex.outDir": "%DIR%/../../Pdf",
+    "latex-workshop.latex.auxDir": "%DIR%/build",
+    "latex-workshop.latex.autoClean.run": "never",
+    "latex-workshop.latex.tools": [
+        {
+            "name": "latexmk-xelatex-ruc",
+            "command": "latexmk",
+            "args": [
+                "-xelatex",
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-outdir=%AUXDIR%",
+                "-auxdir=%AUXDIR%",
+                "-out2dir=%OUTDIR%",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "remove-build-pdf-ruc",
+            "command": "powershell",
+            "args": [
+                "-NoProfile",
+                "-Command",
+                "Remove-Item -LiteralPath (Join-Path (Join-Path '%DIR%' 'build') ([System.IO.Path]::GetFileNameWithoutExtension('%DOC%') + '.pdf')) -Force -ErrorAction SilentlyContinue"
+            ]
+        }
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "latexmk-xelatex-Pdf-build",
+            "tools": [
+                "latexmk-xelatex-ruc",
+                "remove-build-pdf-ruc"
+            ]
+        }
+    ],
+    "latex-workshop.latex.recipe.default": "latexmk-xelatex-Pdf-build"
+}
