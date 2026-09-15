@@ -1,0 +1,441 @@
+\documentclass[aspectratio=32]{beamer}
+
+\usepackage{beamerthemesplit}
+\usetheme{Boadilla}
+\usecolortheme{dolphin}
+\usefonttheme{serif}
+
+\usepackage{multirow}
+\usepackage{subfig}
+\usepackage{amssymb,amsmath,mathtools}
+\usepackage{amsfonts,booktabs}
+\usepackage{lmodern,textcomp}
+\usepackage{color}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,shapes.geometric}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{ctex}
+\usepackage{hyperref}
+\usepackage{nicefrac}
+\usepackage{tabularx}
+\usepackage{ragged2e}
+
+\graphicspath{{material/}}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{caption}[numbered]
+\setbeamercolor{structure}{fg=blue!70!black}
+\setbeamercolor{frametitle}{fg=blue!70!black}
+\setbeamerfont{frametitle}{size=\large}
+\setlength{\parskip}{2pt}
+\setlength{\tabcolsep}{5pt}
+\hbadness=10000
+
+\definecolor{LectureBlue}{RGB}{18,18,150}
+\definecolor{SoftBlue}{RGB}{235,240,255}
+\definecolor{SoftRed}{RGB}{255,239,239}
+\definecolor{SoftGreen}{RGB}{235,249,240}
+\setbeamercolor{lecturesection}{fg=white,bg=LectureBlue}
+\newcommand{\lecturesectionpage}[1]{%
+\begin{frame}[plain]
+\begin{center}
+\vfill
+\begin{beamercolorbox}[wd=0.74\textwidth,rounded=true,shadow=true,center,sep=1em]{lecturesection}
+\LARGE #1
+\end{beamercolorbox}
+\vfill
+\end{center}
+\end{frame}
+}
+
+\title[Lecture 3: Solow Model]{Lecture 3：Solow 增长模型}
+\author{陈宠\inst{1}}
+\institute{中国人民大学经济学院\inst{1}}
+\date{2026 年秋季}
+
+\begin{document}
+
+% 1
+\begin{frame}
+\maketitle
+\end{frame}
+
+% 2
+\begin{frame}{目录}
+\tableofcontents[hideallsubsections]
+\end{frame}
+
+\section{一个起点：Harrod-Domar Model}
+\begin{frame}
+\begin{center}
+    \begin{minipage}{1\textwidth}
+	\setbeamercolor{mybox}{fg=white, bg=black!50!blue}
+		\begin{beamercolorbox}[wd=0.7\textwidth, rounded=true, shadow=true]{mybox}
+			\LARGE \centering 一个起点：Harrod-Domar Model
+		\end{beamercolorbox}
+    \end{minipage}
+\end{center} 
+\end{frame}
+
+% 3
+\begin{frame}{理论动机和洞见}
+\begin{itemize}
+  \item 理论动机(Motivation)：战后发展规划需要回答，给定储蓄与投资能力，经济能否持续扩大生产？
+  \item 理论洞见(Insight)：经济增长率 $g$ 由储蓄率 $s$ 和资本--产出比 $v$ 决定。
+\end{itemize}
+\end{frame}
+
+\begin{frame}{模型设定与核心结论}
+\begin{block}{模型假设}
+\begin{itemize}
+  \item 资本-产出比 $v=K/Y$ 是一个常数
+  \item 储蓄率为 $s=I/Y$ 是一个常数
+\end{itemize}
+\end{block}
+
+\begin{block}{核心结论}
+\begin{itemize}
+  \item 合意增长率 $g_w=\frac{\dot Y}{Y}=\frac{sY-\delta K}{vY}=\frac{s}{v}-\delta$
+  \item 有效劳生产率增长：$g_{AL}=\frac{\dot AL}{AL}=\frac{\dot A}{A}+\frac{\dot L}{L}=g_L+g_A$
+  \item 刀锋条件: $g_w=g_L+g_A$
+\end{itemize}
+\end{block}
+
+\begin{columns}[T]
+\column{0.32\textwidth}
+\begin{block}{$g_W>g_N$}
+资本扩张更快。\par\vspace{0.1cm}
+资本闲置，企业缺少使用资本所需的有效劳动。
+\end{block}
+\column{0.32\textwidth}
+\begin{block}{$g_W<g_N$}
+有效劳动扩张更快。\par\vspace{0.1cm}
+劳动失业或产能不足，增长被资本供给约束。
+\end{block}
+\column{0.32\textwidth}
+\begin{block}{$g_W=g_N$}
+恰好协调。\par\vspace{0.1cm}
+资本与有效劳动按固定比例同步增长。
+\end{block}
+\end{columns}
+\end{frame}
+
+\section{增长的基本框架：Solow Model}
+\begin{frame}
+\begin{center}
+    \begin{minipage}{1\textwidth}
+	\setbeamercolor{mybox}{fg=white, bg=black!50!blue}
+		\begin{beamercolorbox}[wd=0.7\textwidth, rounded=true, shadow=true]{mybox}
+			\LARGE \centering 增长的基本框架：Solow Model
+		\end{beamercolorbox}
+    \end{minipage}
+\end{center} 
+\end{frame}
+
+\begin{frame}{从固定比例生产函数(Lenotif)到C-D生产函数}
+\begin{block}{Solow（1956）的洞见}
+Solow（1956）敏锐的发现，刀锋条件本质上是由Lenotif生产函数产生的
+\[
+Y=\min \left(\frac{K}{v},AL\right)
+\]
+\end{block}
+
+\begin{alertblock}{Solow（1956）的改进}
+通过将Lenotif生产函数替换为C-D生产函数，允许资本和有效劳动相互替代，可以解决模型不稳定的问题
+\end{alertblock}
+\end{frame}
+
+% 12
+\begin{frame}{模型设定}
+
+\end{frame}
+
+\begin{frame}{模型求解与稳态}
+
+\end{frame}
+% 15
+\begin{frame}{相图与稳态的稳定性}
+\small
+\begin{center}
+\begin{tikzpicture}[>=Latex,scale=0.80]
+\draw[->,thick] (0,0)--(7.9,0) node[right] {$k$};
+\draw[->,thick] (0,0)--(0,5.3) node[above] {$\dot k$};
+\draw[blue!70!black,very thick,domain=0.2:7.1,samples=100]
+  plot (\x,{1.34*\x^0.55});
+\draw[red!75!black,very thick] (0,0)--(7.0,4.76);
+\draw[dashed] (4.5,0)--(4.5,3.06);
+\fill[black] (4.5,3.06) circle (2pt);
+\node[blue!70!black,fill=white,inner sep=1pt] at (3.15,2.95) {$sAk^\alpha$};
+\node[red!75!black,fill=white,inner sep=1pt] at (6.15,4.35) {$\delta k$};
+\node[fill=white,inner sep=1pt] at (4.5,-0.4) {$k^*$};
+\draw[->,thick] (2.0,0.55)--(3.2,0.55);
+\draw[->,thick] (6.2,0.55)--(5.0,0.55);
+\node at (2.5,0.95) {增长};
+\node at (5.7,0.95) {下降};
+\end{tikzpicture}
+\end{center}
+\vspace{0.1cm}
+\begin{block}{稳态的稳定性}
+$\dot k>0$ 时资本--劳动比上升，$\dot k<0$ 时下降；两条曲线的交点是稳态。
+\end{block}
+\end{frame}
+
+% 19
+\begin{frame}{储蓄率、生产率和折旧率的比较静态}
+
+\end{frame}
+
+% 21
+\begin{frame}{黄金律：社会最优的资本水平}
+\small
+令人均消费为
+\[
+  c=y-sAk^\alpha=f(k)-s f(k)=f(k)-\delta k
+\]
+在稳态中，投资恰好用于折旧，所以 $s f(k)=\delta k$。社会规划者选择稳态资本最大化消费：
+\[
+  \max_k\ c(k)=f(k)-\delta k.
+\]
+一阶条件为
+\[
+  \boxed{f'(k_{GR})=\delta}.
+\]
+\begin{itemize}
+  \item 左侧是增加一单位资本带来的额外产出。
+  \item 右侧是维持该单位资本所需的折旧补偿。
+  \item 若 $f''(k)<0$，该条件同时给出唯一的消费最大化资本水平。
+\end{itemize}
+\end{frame}
+
+% 22
+\begin{frame}{Cobb--Douglas 下的黄金律储蓄率}
+\small
+在 $f(k)=Ak^\alpha$ 下，黄金律条件为
+\[
+  f'(k_{GR})=\alpha A k_{GR}^{\alpha-1}=\delta.
+\]
+稳态条件为
+\[
+  sAk^{\alpha}=\delta k
+  \quad\Longleftrightarrow\quad
+  sAk^{\alpha-1}=\delta.
+\]
+两式在同一个 $k$ 上同时成立时：
+\[
+  sAk^{\alpha-1}=\alpha Ak^{\alpha-1}
+  \quad\Rightarrow\quad
+  \boxed{s_{GR}=\alpha}.
+\]
+\begin{alertblock}{注意}
+这是 Cobb--Douglas、无人口增长、无技术增长且完全折旧成本为 $\delta k$ 的特定结果；它不是“储蓄越高越好”的一般结论。
+\end{alertblock}
+\end{frame}
+
+\section{扩展 Solow：技术进步与人口增长}
+\lecturesectionpage{扩展 Solow：技术进步与人口增长}
+
+% 23
+\begin{frame}{劳动增强型技术：把技术放进劳动中}
+\small
+采用
+\[
+  Y=K^\alpha(AL)^{1-\alpha},
+  \qquad
+  \frac{\dot A}{A}=g_A,
+  \qquad
+  \frac{\dot L}{L}=n.
+\]
+\begin{itemize}
+  \item $A$ 是每单位劳动的有效程度，而不是简单的“机器数量”。
+  \item $AL$ 是有效劳动；在平衡增长路径上，资本与有效劳动的比例保持不变。
+  \item 这一设定使持续人均增长可以来自外生的 $g_A$，同时保留稳态资本比率的分析。
+\end{itemize}
+\begin{block}{关键变量}
+\[
+  \tilde k\equiv\frac{K}{AL},
+  \qquad
+  \tilde y\equiv\frac{Y}{AL}=\tilde k^\alpha.
+\]
+\end{block}
+\end{frame}
+
+% 24
+\begin{frame}{去趋势变量的推导：资本被两种增长稀释}
+\small
+从 $K=\tilde k\,A L$ 出发，对时间求导：
+\[
+  \dot K=AL\dot{\tilde k}+\tilde k\,\frac{d(AL)}{dt}
+  =AL\left[\dot{\tilde k}+(n+g_A)\tilde k\right].
+\]
+另一方面，资本积累为
+\[
+  \dot K=sY-\delta K
+  =AL\left[s\tilde k^\alpha-\delta\tilde k\right].
+\]
+两式相等并除以 $AL$：
+\[
+  \boxed{\dot{\tilde k}=s\tilde k^\alpha-(n+g_A+\delta)\tilde k}.
+\]
+\begin{alertblock}{新增的两项}
+人口增长稀释资本，技术进步提高有效劳动；二者都像额外折旧一样影响每单位有效劳动的资本。
+\end{alertblock}
+\end{frame}
+
+% 25
+\begin{frame}{扩展模型的稳态}
+\small
+令 $\dot{\tilde k}=0$：
+\[
+  s\tilde k^\alpha=(n+g_A+\delta)\tilde k.
+\]
+因此
+\[
+  \boxed{\tilde k^*=\left(\frac{s}{n+g_A+\delta}\right)^{\frac{1}{1-\alpha}}},
+  \qquad
+  \tilde y^*=(\tilde k^*)^\alpha.
+\]
+\begin{itemize}
+  \item $s$ 提高稳态的有效人均资本和产出。
+  \item $n$、$g_A$ 或 $\delta$ 提高都会降低每单位有效劳动的资本。
+  \item 但总量和人均量仍可能增长，因为分母 $AL$ 本身在增长。
+\end{itemize}
+\end{frame}
+
+% 26
+\begin{frame}{平衡增长路径上的三种增长率}
+\scriptsize
+在 $\tilde k=K/(AL)$ 稳定不变时，有：
+\begin{table}
+\centering
+\begin{tabular}{p{0.23\textwidth}p{0.24\textwidth}p{0.40\textwidth}}
+\toprule
+变量 & 平衡增长率 & 解释 \\
+\midrule
+$K$ & $n+g_A$ & 资本必须与有效劳动同步扩张 \\
+$Y$ & $n+g_A$ & 规模报酬不变，产出与 $AL$ 同速 \\
+$Y/L$ & $g_A$ & 人均产出由劳动增强型技术推动 \\
+$Y/(AL)$ & $0$ & 有效人均产出保持不变 \\
+\bottomrule
+\end{tabular}
+\end{table}
+\vspace{0.12cm}
+\begin{block}{分解}
+\[
+  g_Y=n+g_A,\qquad g_{Y/L}=g_A,
+  \qquad g_{Y/(AL)}=0.
+\]
+人口增长提高总量增长，却不提高人均增长；持续的人均增长来自 $g_A$。
+\end{block}
+\end{frame}
+
+% 27
+\begin{frame}{储蓄率与技术进步：水平和增长的分工}
+\small
+\begin{columns}[T]
+\column{0.47\textwidth}
+\begin{block}{储蓄率 $s$}
+改变 $\tilde k^*$ 与 $\tilde y^*$ 的长期水平。\par\vspace{0.1cm}
+提高 $s$ 会带来一段资本深化过渡，但在稳态中
+\[
+  g_{Y/L}=g_A.
+\]
+\end{block}
+\column{0.47\textwidth}
+\begin{block}{技术增长 $g_A$}
+直接决定有效劳动扩张速度，并在平衡增长路径上决定人均产出增长：
+\[
+  g_{Y/L}=g_A.
+\]
+更快的技术进步还会提高资本维持和追赶稳态的要求。
+\end{block}
+\end{columns}
+\vspace{0.2cm}
+\begin{alertblock}{这正是 Solow 模型的遗留问题}
+模型能说明技术进步对增长有多重要，却把 $g_A$ 当作外生参数；下一讲转向技术进步的内生来源。
+\end{alertblock}
+\end{frame}
+
+% 28
+\begin{frame}{把三个模型放在同一张图上}
+\small
+\begin{table}
+\centering
+\begin{tabular}{p{0.23\textwidth}p{0.28\textwidth}p{0.37\textwidth}}
+\toprule
+模型 & 核心技术 & 关键结论 \\
+\midrule
+Harrod--Domar & 固定比例 $\min\{K/v,AL\}$ & 协调条件是刀锋；缺少替代机制 \\
+基础 Solow & $Y=AK^\alpha L^{1-\alpha}$ & 稳定稳态；储蓄率影响水平 \\
+扩展 Solow & $Y=K^\alpha(AL)^{1-\alpha}$ & $g_A$ 决定长期人均增长 \\
+\bottomrule
+\end{tabular}
+\end{table}
+\vspace{0.25cm}
+\begin{center}
+\begin{tikzpicture}[>=Latex,scale=0.72]
+\node[draw,rounded corners,fill=SoftRed,minimum width=2.3cm,minimum height=0.7cm] (hd) at (0,0) {比例约束};
+\node[draw,rounded corners,fill=SoftBlue,minimum width=2.3cm,minimum height=0.7cm] (s) at (3.5,0) {稳定稳态};
+\node[draw,rounded corners,fill=SoftGreen,minimum width=2.8cm,minimum height=0.7cm] (e) at (7.2,0) {增长来源问题};
+\draw[->,thick] (hd)--(s);
+\draw[->,thick] (s)--(e);
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
+% 29
+\begin{frame}{与 Kaldor 事实的对照}
+\small
+\raggedright
+\begin{itemize}
+  \item 资本--产出比在长期相对稳定：与稳定的平衡增长路径相容。
+  \item 资本和产出以近似相同速度增长：与 $g_K=g_Y=n+g_A$ 相容。
+  \item 要素收入份额相对稳定：Cobb--Douglas 提供了方便的恒定份额基准。
+  \item 人均产出持续增长：需要劳动增强型技术进步 $g_A>0$。
+\end{itemize}
+\vspace{0.2cm}
+\begin{block}{但不要过度解读}
+Kaldor 事实帮助我们判断哪些模型性质值得保留，却不能单独识别 Cobb--Douglas 形式，也不能告诉我们技术进步为何持续。
+\end{block}
+\end{frame}
+
+% 30
+\begin{frame}{本讲总结：Solow 模型教会我们的三件事}
+\small
+\begin{enumerate}
+  \item 放松固定比例后，边际报酬递减和要素替代带来稳定的稳态。
+  \item 储蓄率、生产率和折旧率主要决定长期收入水平及过渡路径。
+  \item 加入劳动增强型技术与人口增长后，$g_A$ 决定长期人均增长，$n$ 主要决定总量增长。
+\end{enumerate}
+\vspace{0.2cm}
+\begin{alertblock}{向 Lecture 4 过渡}
+如果 $g_A$ 是持续人均增长的关键，那么研发、知识积累和创新激励如何进入模型？
+\end{alertblock}
+\end{frame}
+
+% 31
+\begin{frame}{参考文献}
+\small
+\begin{thebibliography}{9}
+\bibitem{solow1956} Solow, R. M. (1956), ``A Contribution to the Theory of Economic Growth,'' \emph{Quarterly Journal of Economics}, 70(1), 65--94.
+\bibitem{harrod1939} Harrod, R. F. (1939), ``An Essay in Dynamic Theory,'' \emph{Economic Journal}, 49(193), 14--33.
+\bibitem{domar1946} Domar, E. D. (1946), ``Capital Expansion, Rate of Growth, and Employment,'' \emph{Econometrica}, 14(2), 137--147.
+\bibitem{kaldor1961} Kaldor, N. (1961), ``Capital Accumulation and Economic Growth,'' in \emph{The Theory of Capital}.
+\end{thebibliography}
+\vfill
+\begin{center}
+\textcolor{gray}{公式与图表依据项目内原始论文及课程逻辑整理。}
+\end{center}
+\end{frame}
+
+% 32
+\begin{frame}[plain]
+\begin{center}
+\vfill
+{\color{LectureBlue}\Huge Thanks!}\par
+\vspace{0.35cm}
+\large chenchong@ruc.edu.cn
+\vfill
+\end{center}
+\end{frame}
+
+\end{document}
